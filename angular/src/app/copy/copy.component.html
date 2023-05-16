@@ -1,0 +1,21 @@
+<h2>Copies <a routerLink="/copyDetails"><button class="button">Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Copy status</th>
+    <th>Book title</th>
+    <th>Book author</th>
+    <th class="from"></th>
+    <th class="from"></th>
+  </tr>
+  <tr *ngFor="let copy of copies" >
+    <td>{{copy.id}}</td>
+    <td>{{copy.status}}</td>
+    <td>{{copy.book.title}}</td>
+    <td>{{copy.book.author.name}} {{copy.book.author.surname}}</td>
+    <td><button (click)="edit(copy)" >Edit</button></td>
+    <td><button (click)="delete(copy)">Delete</button></td>
+  </tr>
+</table>
+
+

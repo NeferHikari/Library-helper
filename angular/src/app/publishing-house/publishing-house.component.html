@@ -1,0 +1,20 @@
+<h2>Publishing Houses <a routerLink="/publishingHouseDetails"><button class="button">Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th class="from"></th>
+    <th class="from"></th>
+  </tr>
+  <tr *ngFor="let house of publishingHouses" >
+    <td>{{house.id}}</td>
+    <td>{{house.name}}</td>
+    <td>{{house.address}}</td>
+    <td><button (click)="edit(house)" >Edit</button></td>
+    <td><button (click)="delete(house)">Delete</button></td>
+  </tr>
+</table>
+
+
+

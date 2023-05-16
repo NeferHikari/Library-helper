@@ -1,0 +1,23 @@
+<h2>Rents <a routerLink="/rentDetails"><button class="button">Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Rental Date</th>
+    <th>Return Date</th>
+    <th>Expected Return Date</th>
+    <th>Copy Id</th>
+    <th>Reader</th>
+    <th class="from"></th>
+    <th class="from"></th>
+  </tr>
+  <tr *ngFor="let rent of rents" >
+    <td>{{rent.id}}</td>
+    <td>{{rent.rentalDate}}</td>
+    <td>{{rent.returnDate}}</td>
+    <td>{{rent.returnExpectedDate}}</td>
+    <td>{{rent.copy.id}}</td>
+    <td>{{rent.reader.name}} {{rent.reader.surname}}</td>
+    <td><button (click)="edit(rent)" >Edit</button></td>
+    <td><button (click)="delete(rent)">Delete</button></td>
+  </tr>
+</table>

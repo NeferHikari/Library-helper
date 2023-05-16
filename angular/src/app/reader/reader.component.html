@@ -1,0 +1,21 @@
+<h2>Readers <a routerLink="/readerDetails"><button class="button">Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let reader of readers" >
+    <td>{{reader.id}}</td>
+    <td>{{reader.name}}</td>
+    <td>{{reader.surname}}</td>
+    <td>{{reader.email}}</td>
+    <td><button (click)="edit(reader)" >Edit</button></td>
+    <td><button (click)="delete(reader)">Delete</button></td>
+  </tr>
+</table>
+
+

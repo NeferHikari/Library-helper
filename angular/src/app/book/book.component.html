@@ -1,0 +1,27 @@
+<h2>Books <a routerLink="/bookDetails"><button class="button">Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Date of publication</th>
+    <th>Number of pages</th>
+    <th>Publishing house</th>
+    <th class="from"></th>
+    <th class="from"></th>
+  </tr>
+  <tr *ngFor="let book of books" >
+    <td>{{book.id}}</td>
+    <td>{{book.title}}</td>
+    <td>{{book.author.name}} {{book.author.surname}}</td>
+    <td>{{book.category.name}}</td>
+    <td>{{book.dateOfPublication}}</td>
+    <td>{{book.numberOfPages}}</td>
+    <td>{{book.publishingHouse.name}}</td>
+    <td><button (click)="edit(book)" >Edit</button></td>
+    <td><button (click)="delete(book)">Delete</button></td>
+  </tr>
+</table>
+
+

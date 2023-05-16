@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { PublishingHouseComponent } from './publishing-house.component';
+
+describe('PublishingHouseComponent', () => {
+  let component: PublishingHouseComponent;
+  let fixture: ComponentFixture<PublishingHouseComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PublishingHouseComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(PublishingHouseComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

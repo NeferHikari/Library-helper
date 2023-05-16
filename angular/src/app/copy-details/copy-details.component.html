@@ -1,0 +1,36 @@
+<h1 *ngIf="!copy">Add copy</h1>
+<h1 *ngIf="copy">Edit copy</h1>
+
+<div *ngIf="copy">
+  <span> Id: </span>{{copy.id}}<br>
+
+  <label for="books"> Book: </label>
+  <select  id="books">
+    <option *ngFor="let book of books" (click)="selectBook(book.id)">{{book.title}} {{book.author.name}} {{book.author.surname}}</option>
+  </select><br>
+
+  <label for="status"> Status: </label>
+  <select id="status" >
+    <option *ngFor="let state of states" (click)="selectState(state)">{{state}}</option>
+  </select><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!copy">
+  <label for="books1"> Book: </label>
+  <select  id="books1">
+    <option *ngFor="let book1 of books" (click)="selectBook(book1.id)">{{book1.title}} {{book1.author.name}} {{book1.author.surname}}</option>
+  </select><br>
+
+  <label for="status1"> Status: </label>
+  <select id="status1" >
+    <option *ngFor="let state of states" (click)="selectState(state)">{{state}}</option>
+  </select><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add()">Save</button><br>
+</div>
+
+

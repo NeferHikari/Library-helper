@@ -1,0 +1,62 @@
+<h1 *ngIf="!book">Add book</h1>
+<h1 *ngIf="book">Edit book</h1>
+
+<div *ngIf="book">
+  <span> Id: </span>{{book.id}}<br>
+  <label for="book-title"> Title: </label>
+  <input type="text" id="book-title" [(ngModel)]="book.title" placeholder="name"><br>
+
+  <label for="author"> Author: </label>
+  <select id="author" >
+    <option *ngFor="let author of authors" (click)="selectAuthor(author.id)">{{author.name}} {{author.surname}}</option>
+  </select><br>
+
+  <label for="categories"> Category: </label>
+  <select  id="categories">
+    <option *ngFor="let category of categories" (click)="selectCategory(category.id)">{{category.name}}</option>
+  </select><br>
+
+  <label for="houses"> Publishing house: </label>
+  <select id="houses"  >
+    <option *ngFor="let house of houses" (click)="selectHouse(house.id)">{{house.name}}</option>
+  </select><br>
+
+  <label for="numberOfPages"> Number of pages: </label>
+  <input type="text" id="numberOfPages" [(ngModel)]="book.numberOfPages" placeholder="000"><br>
+
+  <label for="dateOfPublication"> Date of publication: </label>
+  <input type="text" id="dateOfPublication" [(ngModel)]="book.dateOfPublication" placeholder="yyyy-mm-dd"><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!book">
+  <label for="title"> Title: </label>
+  <input type="text" id="title" #title  placeholder="title"><br>
+
+  <label for="author1"> Author: </label>
+  <select id="author1"  >
+    <option *ngFor="let author of authors" (click)="selectAuthor(author.id)">{{author.name}} {{author.surname}}</option>
+  </select><br>
+
+  <label for="categories1"> Category: </label>
+  <select  id="categories1">
+    <option *ngFor="let category of categories" (click)="selectCategory(category.id)">{{category.name}}</option>
+  </select><br>
+
+  <label for="houses1"> Publishing house: </label>
+  <select id="houses1"  >
+    <option *ngFor="let house of houses" (click)="selectHouse(house.id)">{{house.name}}</option>
+  </select><br>
+
+  <label for="numberOfPages1"> Number of pages: </label>
+  <input type="text" id="numberOfPages1" #numberOfPages  placeholder="000"><br>
+
+  <label for="dateOfPublication1"> Date of publication: </label>
+  <input type="text" id="dateOfPublication1" #dateOfPublication  placeholder="yyyy-mm-dd"><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add(title.value,numberOfPages.value,dateOfPublication.value)">Save</button><br>
+</div>
+

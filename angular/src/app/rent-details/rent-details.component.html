@@ -1,0 +1,55 @@
+<h1 *ngIf="!rent">Add rent</h1>
+<h1 *ngIf="rent">Edit rent</h1>
+
+<div *ngIf="rent">
+  <span> Id: </span>{{rent.id}}<br>
+
+  <label for="rentalDate"> Rental date: </label>
+  <input type="text" id="rentalDate" #rentalDate  placeholder="Rental date"><br>
+
+  <label for="returnDate"> Return date: </label>
+  <input type="text" id="returnDate" #returnDate  placeholder="Return date"><br>
+
+  <label for="exreturnDate"> Expected return date: </label>
+  <input type="text" id="exreturnDate" #exreturnDate  placeholder="Expected return date"><br>
+
+  <label for="copy"> Copy: </label>
+  <select id="copy" >
+    <option *ngFor="let copy of copies" (click)="selectCopy(copy.id)">{{copy.id}}</option>
+  </select><br>
+
+  <label for="reader"> Reader: </label>
+  <select id="reader" >
+    <option *ngFor="let reader of readers" (click)="selectReader(reader.id)">{{reader.name}} {{reader.surname}}</option>
+  </select><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!rent">
+  <label for="rentalDate1"> Rental date: </label>
+  <input type="text" id="rentalDate1" #rentalDate  placeholder="Rental date"><br>
+
+  <label for="returnDate1"> Return date: </label>
+  <input type="text" id="returnDate1" #returnDate  placeholder="Return date"><br>
+
+  <label for="exreturnDate1"> Expected return date: </label>
+  <input type="text" id="exreturnDate1" #exreturnDate  placeholder="Expected return date"><br>
+
+  <label for="copy1"> Copy: </label>
+  <select id="copy1" >
+    <option *ngFor="let copy of copies" (click)="selectCopy(copy.id)">{{copy.id}}</option>
+  </select><br>
+
+  <label for="reader1"> Reader: </label>
+  <select id="reader1" >
+    <option *ngFor="let reader of readers" (click)="selectReader(reader.id)">{{reader.name}} {{reader.surname}}</option>
+  </select><br>
+
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add(rentalDate.value,returnDate.value,exreturnDate.value)">Save</button><br>
+</div>
+
+

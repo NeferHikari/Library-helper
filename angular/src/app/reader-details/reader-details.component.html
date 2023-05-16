@@ -1,0 +1,26 @@
+<h1 *ngIf="!reader">Add Reader</h1>
+<h1 *ngIf="reader">Edit Reader</h1>
+
+<div *ngIf="reader">
+  <span>id: </span>{{reader.id}}<br>
+  <label for="reader-name"> Name: </label>
+  <input type="text" id="reader-name" [(ngModel)]="reader.name" placeholder="name"><br>
+  <label for="reader-surname"> Surname: </label>
+  <input type="text" id="reader-surname" [(ngModel)]="reader.surname" placeholder="surname"><br>
+  <label for="reader-email"> Email: </label>
+  <input type="text" id="reader-email" [(ngModel)]="reader.email" placeholder="email"><br>
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!reader">
+  <label for="reader-name"> Name: </label>
+  <input type="text" #name  placeholder="name"><br>
+  <label for="reader-surname"> Surname: </label>
+  <input type="text" #surname  placeholder="surname"><br>
+  <label for="reader-email"> Email: </label>
+  <input type="text" #email  placeholder="email"><br>
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add(name.value,surname.value,email.value)">Save</button><br>
+</div>
+

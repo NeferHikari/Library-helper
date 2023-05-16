@@ -1,0 +1,22 @@
+<h1 *ngIf="!publishingHouse">Add publishing house</h1>
+<h1 *ngIf="publishingHouse">Edit publishing house</h1>
+
+<div *ngIf="publishingHouse">
+  <span>id: </span>{{publishingHouse.id}}<br>
+  <label for="name"> Name: </label>
+  <input type="text" id="name" [(ngModel)]="publishingHouse.name" placeholder="name"><br>
+  <label for="address">Address: </label>
+  <input type="text" id="address" [(ngModel)]="publishingHouse.address" placeholder="address"><br>
+
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!publishingHouse">
+  <label for="name">Name: </label>
+  <input type="text" #name  placeholder="name"><br>
+  <label for="address">Address: </label>
+  <input type="text" #address  placeholder="address"><br>
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add(name.value,address.value)">Save</button><br>
+</div>

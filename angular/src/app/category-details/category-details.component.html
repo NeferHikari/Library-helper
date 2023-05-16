@@ -1,0 +1,18 @@
+<h1 *ngIf="!category" xmlns="http://www.w3.org/1999/html">Add Category</h1>
+<h1 *ngIf="category">Edit Category</h1>
+
+<div *ngIf="category">
+  <span>id: </span>{{category.id}}<br>
+  <label for="category-name"> Name: </label>
+  <input type="text" id="category-name" [(ngModel)]="category.name" placeholder="name"><br>
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="edit()">Save</button><br>
+</div>
+
+<div *ngIf="!category">
+  <label for="category-name"> Name: </label>
+  <input type="text" #name  placeholder="name"><br>
+  <button class="button" (click)="goBack()">Go back</button>
+  <button class="button" (click)="add(name.value)">Save</button><br>
+</div>
+

@@ -1,0 +1,18 @@
+<h2>Authors <a routerLink="/authorDetails"><button class="button" >Add new</button></a></h2>
+<table id="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th class="from"></th>
+    <th class="from"></th>
+  </tr>
+  <tr *ngFor="let author of authors" >
+      <td>{{author.id}}</td>
+    <td>{{author.name}}</td>
+    <td>{{author.surname}}</td>
+    <td><button (click)="edit(author)" >Edit</button></td>
+    <td><button (click)="delete(author)">Delete</button></td>
+  </tr>
+</table>
+

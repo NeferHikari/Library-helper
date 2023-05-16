@@ -1,0 +1,22 @@
+* {
+  font-family: Raleway, sans-serif !important;
+}
+.button {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 12.3%;
+  text-align: center;
+}
+.navbar {
+
+  width: 100%;
+  background-color: #053C5E;
+  overflow: auto;
+}
+.button:hover {
+  background-color: #1F7A8C;
+}
+
